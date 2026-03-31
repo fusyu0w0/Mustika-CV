@@ -18,22 +18,39 @@ body {
   justify-content: center;
 }
 
-/* LAYOUT (LOCK A4) */
+/* DOWNLOAD BUTTON */
+.download-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.download-btn button {
+  background: #d4af37;
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+/* LAYOUT */
 .container {
   width: 210mm;
-  height: 297mm; /* 🔥 LOCK PDF */
+  height: 297mm;
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: #151517;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
 }
 
+/* COLUMN */
 .left, .right {
   padding: 40px;
   box-sizing: border-box;
 }
 
-/* RIGHT FLEX */
 .right {
   background: #1c1c1f;
   display: flex;
@@ -45,7 +62,7 @@ h1 {
   font-size: 28px;
   color: #d4af37;
   margin: 0;
-  white-space: nowrap; /* 🔥 NO WRAP */
+  white-space: nowrap;
   letter-spacing: 1px;
 }
 
@@ -147,10 +164,10 @@ li {
   border-radius: 10px;
 }
 
-/* QR POSITION */
+/* QR */
 .qr-wrapper {
   margin-top: auto;
-  padding-bottom: 30px; /* 🔥 NAIK SEDIKIT */
+  padding-bottom: 30px;
 }
 
 .qr-container {
@@ -169,33 +186,37 @@ li {
   font-size: 11px;
   color: #d4af37;
   margin-top: 6px;
+  word-break: break-all;
 }
 
 /* PRINT FIX */
 @media print {
+  .download-btn { display: none; }
 
   body {
     background: white;
-    zoom: 100%;
   }
 
   .container {
     width: 210mm;
     height: 297mm;
-    box-shadow: none;
   }
 
   * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
-
 }
 
 </style>
 </head>
 
 <body>
+
+<!-- DOWNLOAD BUTTON -->
+<div class="download-btn">
+  <button onclick="downloadPDF()">Download PDF</button>
+</div>
 
 <main class="container">
 
@@ -219,9 +240,9 @@ I deliver high-quality design concepts that meet aesthetic standards and provide
 <div class="job-date">2024 - Present</div>
 <div class="job-title">Freelance Interior Designer</div>
 <ul>
-<li>Design residential and commercial interior concepts</li>
-<li>Create 3D visualizations using SketchUp, V-Ray, and Enscape</li>
-<li>Collaborate with clients to achieve personalized design outcomes</li>
+<li>Designed residential and commercial interior concepts</li>
+<li>Created 3D visualizations using SketchUp, V-Ray, and Enscape</li>
+<li>Collaborated with clients to deliver personalized design solutions</li>
 </ul>
 </div>
 
@@ -271,7 +292,8 @@ I deliver high-quality design concepts that meet aesthetic standards and provide
 <div class="section-title alt">Education</div>
 <p>
 <b>Graduated - 2022</b><br>
-Bachelor of Design (B.Des) / Sarjana Desain (S.Ds)
+Bachelor of Design (B.Des) / Sarjana Desain (S.Ds)<br>
+Indonesian Institute of The Arts Yogyakarta
 </p>
 
 <div class="section-title alt">Design Skills</div>
@@ -287,7 +309,6 @@ Bachelor of Design (B.Des) / Sarjana Desain (S.Ds)
 
 </div>
 
-<!-- QR -->
 <div class="qr-wrapper">
 <div class="qr-container">
 <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&color=212,175,55&bgcolor=21,21,23&data=https://portofolio-mustika.vercel.app/">
@@ -300,6 +321,21 @@ https://portofolio-mustika.vercel.app/
 </aside>
 
 </main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+function downloadPDF() {
+  const element = document.querySelector('.container');
+
+  html2pdf().from(element).set({
+    margin: 0,
+    filename: 'Mustika-CV.pdf',
+    html2canvas: { scale: 3, useCORS: true },
+    jsPDF: { unit: 'mm', format: 'a4' }
+  }).save();
+}
+</script>
 
 </body>
 </html>
