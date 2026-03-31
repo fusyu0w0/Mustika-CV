@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustika CV</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ICON TAB -->
+<link rel="icon" href="https://img.icons8.com/ios-filled/50/resume.png">
+
+<style>
+
+/* GLOBAL */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #0f0f10;
+  display: flex;
+  justify-content: center;
+}
+
+/* DOWNLOAD BUTTON */
+.download-bar {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.download-bar button {
+  background: #d4af37;
+  color: #000;
+  border: none;
+  padding: 10px 16px;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.download-bar button:hover {
+  opacity: 0.9;
+}
+
+/* LAYOUT */
+.container {
+  width: 210mm;
+  min-height: 297mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #151517;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+.left, .right {
+  padding: 40px;
+}
+
+.right {
+  background: #1c1c1f;
+}
+
+/* HEADER */
+header h1 {
+  font-size: 30px;
+  color: #d4af37;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.subtitle {
+  color: #a0a0a0;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+/* SECTION */
+section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-weight: 600;
+  color: #d4af37;
+  background: #2a2a2d;
+  padding: 6px 12px;
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.section-title.alt {
+  background: #d4af37;
+  color: #000;
+}
+
+/* TEXT */
+p {
+  color: #cfcfcf;
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+ul {
+  padding-left: 18px;
+}
+
+li {
+  color: #ffffff;
+  font-size: 13px;
+}
+
+/* JOB */
+.job {
+  margin-bottom: 18px;
+}
+
+.job-date {
+  font-size: 12px;
+  color: #a0a0a0;
+}
+
+.job-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+/* PROFILE */
+.profile {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.profile-frame {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-frame::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: #e6e6e6;
+  top: -20px;
+  right: -20px;
+  z-index: -1;
+}
+
+.profile-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* CONTACT */
+.contact p {
+  margin: 6px 0;
+}
+
+/* SKILLS */
+.skills-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-icons img {
+  width: 32px;
+  height: 32px;
+  background: #2a2a2d;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+/* PRINT */
+@media print {
+  .download-bar { display: none; }
+  body { background: white; }
+  .container { box-shadow: none; }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- DOWNLOAD -->
+<div class="download-bar">
+  <button onclick="downloadCV()">Download CV</button>
+</div>
+
+<main class="container">
+
+<!-- LEFT -->
+<section class="left">
+
+<header>
+  <h1>MUSTIKA FIRDAUSIA</h1>
+  <div class="subtitle">Interior Designer | 3D Modeler | Visualizer</div>
+</header>
+
+<section>
+  <div class="section-title">About Me</div>
+  <p>
+    My name is Mustika Firdausia. I am a passionate 3D Interior Designer focused on creating realistic and functional spaces.
+  </p>
+  <p>
+    I deliver high-quality design concepts that meet aesthetic standards and provide meaningful spatial experiences.
+  </p>
+</section>
+
+<section>
+  <div class="section-title">Work Experience</div>
+
+  <div class="job">
+    <div class="job-date">2024 - Present</div>
+    <div class="job-title">Freelance Interior Designer</div>
+    <ul>
+      <li>Designed residential and commercial interior concepts</li>
+      <li>Created 3D visualizations using SketchUp, V-Ray, and Enscape</li>
+      <li>Collaborated with clients to deliver personalized design solutions</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-date">2022 - 2024</div>
+    <div class="job-title">Lead Interior Designer | PT. Dinamika Yasa Retailindo</div>
+    <ul>
+      <li><b>Retail Projects:</b> Designed and executed interior concepts</li>
+      <li><b>Residential Projects:</b> Managed high-end projects</li>
+      <li><b>Project Coordination:</b> Collaborated with teams</li>
+      <li><b>3D Visualization:</b> Produced renderings</li>
+      <li><b>Client Consultation:</b> Provided design advice</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-date">2021</div>
+    <div class="job-title">Junior Interior Designer</div>
+    <ul>
+      <li>Assisted in design concepts and space planning</li>
+      <li>Created technical drawings and moodboards</li>
+    </ul>
+  </div>
+
+</section>
+
+</section>
+
+<!-- RIGHT -->
+<aside class="right">
+
+<div class="profile">
+  <div class="profile-frame">
+    <img src="https://i.imgur.com/DmlSqjN.jpeg" alt="profile">
+  </div>
+</div>
+
+<section>
+  <div class="section-title alt">Contact Me</div>
+  <div class="contact">
+    <p>📧 mustikafushimi@gmail.com</p>
+    <p>📱 +62 895710462010</p>
+    <p>🔗 LinkedIn: mustika firdausia</p>
+    <p>📍 West Java, Indonesia</p>
+    <p>💼 Flexible work arrangement: Ability to work from home or office</p>
+  </div>
+</section>
+
+<section>
+  <div class="section-title alt">Education</div>
+  <p>
+    <b>Graduated - 2022</b><br>
+    Bachelor of Design (B.Des) / Sarjana Desain (S.Ds)
+  </p>
+</section>
+
+<section>
+  <div class="section-title alt">Design Skills</div>
+  <div class="skills-icons">
+    <img src="https://img.icons8.com/color/48/autocad.png">
+    <img src="https://img.icons8.com/color/48/sketchup.png">
+    <img src="https://img.icons8.com/color/48/adobe-photoshop.png">
+    <img src="https://img.icons8.com/color/48/3d.png">
+    <img src="https://img.icons8.com/color/48/virtual-reality.png">
+    <img src="https://img.icons8.com/color/48/coreldraw.png">
+  </div>
+</section>
+
+</aside>
+
+</main>
+
+<!-- SCRIPT -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script>
+async function downloadCV() {
+  const { jsPDF } = window.jspdf;
+  const element = document.querySelector(".container");
+
+  const canvas = await html2canvas(element, { scale: 2 });
+  const imgData = canvas.toDataURL("image/png");
+
+  const pdf = new jsPDF({
+    orientation: "portrait",
+    unit: "mm",
+    format: "a4"
+  });
+
+  const imgWidth = 210;
+  const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+  pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+  pdf.save("Mustika_CV.pdf");
+}
+</script>
+
+</body>
+</html>
